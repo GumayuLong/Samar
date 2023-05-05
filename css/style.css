@@ -1,0 +1,55 @@
+/* RESET CSS */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    background-color: #fff;
+}
+
+/* GLOBAL */
+.container{
+    max-width: 1199px;
+    margin: auto;
+}
+.btn__gradient{
+    padding: 20px 35px;
+    font-size: 15px;
+    font-weight: 500;
+}
+
+/* HEADER */
+header{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+.header__content{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.header__content nav {
+    display: flex;
+    align-items: center;
+}
+.header__content nav ul {
+    display: flex;
+    margin-right: 30px;
+}
+.header__content nav ul li{
+    list-style: none;
+    padding: 55px 15px;
+}
+.header__content span{
+    display: inline-block;
+}
+/* BANNER */
+/* SERVICE */
+/* ABOUT US */
+/* NUMBER */
+/* FEATURE */
+/* PORTFOLIO */
+/* BLOG */
+/* FOOTER */
