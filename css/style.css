@@ -126,13 +126,17 @@ header{
     display: inline-block;
     font-size: 15px;
 }
+.header__content li:hover span{
+    animation-name: Navanimation__header;
+    animation-duration: 0.5s;
+}
 .header__content nav ul li i{
     font-size: 9px;
     margin-top: -3px;
     vertical-align: middle;
 }
 
-/* BANNER (NHANH)*/
+/* BANNER */
 .banner{
     padding-top: 180px;
     background-image: url(../img/pic2.png);
@@ -144,7 +148,6 @@ header{
 .banner__content{
     display: flex;
     align-items: center;
-    /* position: absolute; */
 }
 .banner__content--left{
     width: 60%;
@@ -185,7 +188,7 @@ header{
     margin-right: 10px;
 }
 
-/* SERVICE (NHANH)*/
+/* SERVICE */
 .service{
     padding-top: 115px;
     background-image: url(../img/bg2.png);
@@ -205,7 +208,12 @@ header{
     background: #fff;
     padding: 30px 45px;
     border: 3px solid transparent;
-    box-shadow: 0 0 60px 0 rgba(0, 0, 0, 0.1)
+    box-shadow: 0 0 60px 0 rgba(0, 0, 0, 0.1);
+    transition: all 0.5s;
+}
+.service__item:hover{
+    transform: translateY(-20px);
+    border-image: url(../img/br.png) 1 round;
 }
 .service__item img{
     width: 215px;
@@ -326,21 +334,57 @@ header{
     border-radius: 10px;
     box-shadow: 0 0px 60px 0px rgb(0 0 0 / 10%);
 }
+.feature__bg::after {
+    content: "";
+    background-image: linear-gradient(to right, #f55f8d 0, #f8ae56 51%, #f55f8d 100%);
+    background-size: 200%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    border-radius: 10px;
+    transition: all 1s;
+}
+.feature__bg:hover::after {
+    opacity: 1;
+}
 .feature__bg i{
     font-size: 80px;
     color: #f55f8d;
     line-height: 1;
+    transition: all 1s;
+    z-index: 1;
 }
-.fearture__bg--content{
+.feature__bg:hover i{
+    color: white;
+    transition: all 1s;
+}
+.feature__bg--content{
     padding-left: 25px;
+    z-index: 1;
+    transition: all 1s;
 }
-.fearture__bg--content h3{
+.feature__bg--content h3{
     font-weight: 700;
     font-size: 24px;
     color: #262626;
+    transition: all 1s;
+    z-index: 1;
+}
+.feature__bg--content p{
+    transition: all 1s;
+}
+.feature__bg:hover .feature__bg--content, .feature__bg:hover h3, .feature__bg:hover p{
+    color: white;
 }
 .feature__img{
     margin-right: -80px;
+    transition: all 1s;
+    animation-name: shakeAnimation;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
 }
 .feature__img img{
     max-width: 100%;
@@ -584,6 +628,15 @@ form{
     border-color: transparent;
     cursor: pointer;
     color: white;
+    transition: all 0.5s;
+}
+.btn__footer:hover{
+    background-position: right center;
+}
+.btn__footer:hover i{
+    animation-name: btn__footer;
+    animation-duration: 0.5s;
+    animation-iteration-count: 1;
 }
 .footer__bottom{
     display: flex;
@@ -687,4 +740,80 @@ form{
 }
 .cd-top--fade-out {
     opacity: .5;
+}
+
+/* ANIMATION__SETTING */
+.animate__animated.animate__fadeInLeft {
+    --animate-duration: 2s;
+}
+/* This changes all the animations globally */
+
+:root {
+    --animate-duration: 800ms;
+    --animate-delay: 0.9s;
+}
+.animate__animated.animate__fadeIn {
+    --animate-duration: 2s;
+}
+
+/* This changes all the animations globally */
+:root {
+    --animate-duration: 800ms;
+    --animate-delay: 0.9s;
+}
+
+.animate__animated.animate__fadeInRight {
+    --animate-duration: 2s;
+}
+/* This changes all the animations globally */
+:root {
+    --animate-duration: 800ms;
+    --animate-delay: 0.9s;
+}
+
+.animate__animated.animate__fadeInUp {
+    --animate-duration: 2s;
+}
+
+/* This changes all the animations globally */
+:root {
+    --animate-duration: 800ms;
+    --animate-delay: 0.9s;
+}
+/* KEYFRAME */
+@keyframes Navanimation__header {
+    49% {
+        transform: translateY(100%);
+    }
+    50% {
+        opacity: 0;
+        transform: translateY(-100%);
+    }
+    51% {
+        opacity: 1;
+    }
+}
+@keyframes shakeAnimation{
+    0%{
+        transform: rotate(1deg) translate(2px, 2px);
+    }
+    50% {
+        transform: rotate(-1deg) translate(-2px, -2px);
+    }
+    100% {
+        transform: rotate(1deg) translate(2px, 2px);
+    }
+}
+
+@keyframes btn__footer{
+    49%{
+        transform: translateX(100%);
+    }
+    50%{
+        opacity: 0;
+        transform: translateX(-100%);
+    }
+    51%{
+        opacity: 1;
+    }
 }
